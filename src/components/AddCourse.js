@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 const AddCourse = () => {
   useEffect(() => {
-    document.title = "Add Course || Learncode Zoheeb";
+    document.title = "Ajouter un cours || Apprendre le code Zoheeb";
   }, []);
 
   const [course, setcourse] = useState({});
@@ -22,7 +22,7 @@ const AddCourse = () => {
       (res)=>{
         console.log(res);
         console.log("succes");
-        toast.success("courses has benn added",{
+        toast.success("cours ajoutés",{
           position:"bottom-center"
         });
         setcourse({id:"",title:"",description:""})
@@ -32,7 +32,7 @@ const AddCourse = () => {
       (err)=>{
           console.log(err);
           console.log("error");
-          toast.error("someting went wrong",{
+          toast.error("ERROR",{
             position:"bottom-center"
           })
       }
@@ -41,13 +41,13 @@ const AddCourse = () => {
 
   return (
     <div>
-      <h1 className="text-center my-3">Fill Course Detail</h1>
+      <h1 className="text-center my-3">Remplir les détails du cours</h1>
       <Form onSubmit={handleForm}>
         <FormGroup className="text-left">
-          <Label for="userID">Course ID</Label>
+          <Label for="userID">ID Cour</Label>
           <Input
             type="text"
-            placeholder="Id here"
+            placeholder="Id "
             name="userId"
             id="userId"
             onChange={(e) => {
@@ -56,10 +56,10 @@ const AddCourse = () => {
           />
         </FormGroup>
         <FormGroup className="text-left">
-          <Label for="title">Course Title</Label>
+          <Label for="title">Titre</Label>
           <Input
             type="text"
-            placeholder="Title here"
+            placeholder="Titre"
             id="title"
             onChange={(e) => {
               setcourse({ ...course, title: e.target.value });
@@ -67,10 +67,10 @@ const AddCourse = () => {
           />
         </FormGroup>
         <FormGroup className="text-left">
-          <Label for="exampleText">Course Description</Label>
+          <Label for="exampleText">Description</Label>
           <Input
             type="textarea"
-            placeholder="Description here"
+            placeholder="Description"
             id="description"
             style={{ height: 150 }}
             onChange={(e) => {
@@ -79,8 +79,8 @@ const AddCourse = () => {
           />
         </FormGroup>
         <Container className="text-center">
-          <Button  color="success">Add Course</Button>
-          <Button type="reset"  color="warning ml-2" onClick={()=>{setcourse({id:"",title:"",description:""});}}>Clear</Button>
+          <Button  color="success">Ajouter</Button>
+          <Button type="reset"  color="warning ml-2" onClick={()=>{setcourse({id:"",title:"",description:""});}}>Supprimer</Button>
         </Container>
       </Form>
     </div>

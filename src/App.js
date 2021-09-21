@@ -13,7 +13,7 @@ import Course from "./components/Course";
 
 function App() {
   const btnHandle = () =>
-    toast.success("Wow so easy!", { position: "bottom-center" });
+    toast.success("fastoche!", { position: "bottom-center" });
   return (
     <div className="App">
       <Router>

@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 const AllCourses = () => {
   useEffect(() => {
-    document.title = "All Course || Learncode Zoheeb";
+    document.title = "Tous les cours || Apprendre le code Zoheeb";
     getAllCoursesFromServer();
   }, []);
 
@@ -18,7 +18,7 @@ const AllCourses = () => {
         //success
         console.log(res.data);
         console.log(res);
-        toast.success("courses has benn loaded",{
+        toast.success("les cours ont été chargés",{
           position:"bottom-center"
         })
         setcourses(res.data)
@@ -26,7 +26,7 @@ const AllCourses = () => {
       (err)=>{
         // for error
         console.log(err);
-        toast.error("someting went wrong",{
+        toast.error("quelque chose s'est mal passé",{
           position:"bottom-center"
         })
       }
@@ -47,12 +47,12 @@ const AllCourses = () => {
 
   return (
     <div>
-      <h1>All Course</h1>
-      <p>List of Courses are as follows</p>
+      <h1>Tous les cours</h1>
+      <p>La liste des cours</p>
 
       {courses.length > 0
         ? courses.map((item) => <Course key={item.id} course={item} update={updetCourses} />)
-        : "No courses"}
+        : "Pas de cour"}
     </div>
   );
 };

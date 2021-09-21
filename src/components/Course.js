@@ -20,12 +20,12 @@ const Course = ({ course,update }) => {
     axios.delete(`${base_url}/api/courses/${id}`).then(
       (res)=>{
         //success
-        toast.success("delete")
+        toast.success("supprimer")
         update(id);
       },
       (err)=>{
         // for error
-       toast.error("not delete server problem")
+       toast.error("probleme serveur")
       }
     )
   }
@@ -47,8 +47,8 @@ const Course = ({ course,update }) => {
               <Container className="text-center">
                   <Button color="danger" onClick={()=>{
                     deleteCourse(course.id)
-                  }}>Delete</Button>
-                  <Button color="warning ml-3">Update</Button>
+                  }}>supprimer</Button>
+                  <Button color="warning ml-3">modifier</Button>
               </Container>
           </CardBody>
       </Card>
