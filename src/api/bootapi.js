@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const base_url = "http://localhost:8080";
+const base_url = "https://zoheeb-cour-api.herokuapp.com";
 
 const get = async (url) => {
   return await axios.get(`${base_url}${url}`);
